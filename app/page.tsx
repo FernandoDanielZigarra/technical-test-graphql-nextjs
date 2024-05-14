@@ -1,7 +1,6 @@
 import { gql } from "@apollo/client";
 import createApolloClient from "../lib/client";
 import BasicTable from "./components/Table/SimpleTable";
-import { token } from "@/constants";
 import Container from "@mui/material/Container";
 
 async function loadData() {
@@ -38,7 +37,7 @@ async function loadData() {
       `,
       context: {
         headers: {
-          Authorization: token,
+          Authorization: process.env.TOKEN,
         },
       },
     });
